@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Ajax JQuery Test</title>
+<script type ="text/javascript">
+  var xmlReq;
+  $(document).ready(function(){
+	  alert("document ready");
+	  $("a").click(function(event){
+		  alert("asdfasf");
+		  event.preventDefault();
+		  initWithGet();
+	  }); 
+  });
+   
+  function initWithGet(){
+	  alert("initWithGet");
+	 
+	  if(window.XMLHttpRequest){
+		  xmlReq = new XMLHttpRequest();
+	  }else{
+		  xmlReq = new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	  alert("aaaa");
+	  
+	  xmlReq.onreadystatechange = serverResponseForGet;
+	  xmlReq.open("GET","http://localhost:8080/AbsoluteSWDD/TestServlet"+"?name="+encodeURIComponent("george"))
+	  xmlReq.send();
+  }
+  
+  function serverResponseForGet(){
+	  alert("serverResponseForGet xmlReq ready state:"+xmlReq.readyState);
+	  if(xmlReq.readyState==4){
+		  alert("ready state==4");
+		  if(xmlReq.state=200){
+			  alert("state 200 responseText:"+xmlReq.responseText);
+		  }
+	  }
+  }
+</script>
+</head>
+<body>
+<a href="www.google.com">google</a>
+
+</body>
+</html>

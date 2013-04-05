@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Create Data Delete</title>
+
+<script type="text/javascript">
+var nae= { "1" : ["ESNa","ESNb","ESNc"],"2":["ESN123234234234","ESN234234234556","ESN999444555666"]};
+function foo(){
+//	 alert(nae[1][1]);
+//	 alert(nae[2][0]);
+	 
+	}
+</script>
+</head>
+<body onload="foo()">
+<h2 align="center">
+Create DataDelete Request
+</h2>
+<form method="POST" action="TestServlet">
+AccountID: <input type="text" name="accountid" value=12345><br>
+GroupID: <input type="text" name="groupid" value=555><br>
+ESN: <input type="text" name="esn" value="ESN1234">
+Name: <input type="text" name="name" value="Test">
+Reason: <input type="text" name="reason" value="Test DD">
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>
